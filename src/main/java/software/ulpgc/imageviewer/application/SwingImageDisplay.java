@@ -19,7 +19,6 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay {
     private int initShift;
     private Released released = Released.Null;
     private Shift shift = Shift.Null;
-    private Image current;
     private final Map<Image, java.awt.Image> imageCache = new HashMap<>();
 
     public SwingImageDisplay(ImageDeserializer deserializer) {
@@ -66,7 +65,7 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay {
 
     @Override
     public Image currentImage() {
-        return current;
+        return imagesOnScreen.getFirst().image();
     }
 
     public void clear() {
